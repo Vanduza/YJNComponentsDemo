@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "YJNChooseList.h"
 
-@interface ViewController ()
-
+@interface ViewController ()<YJNChooseListDataSource,YJNChooseListDelegate>
+@property (nonatomic, strong) YJNChooseList* chooseList;
+@property (nonatomic, strong) NSMutableArray *dataArr;
 @end
 
 @implementation ViewController
@@ -17,6 +19,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.dataArr = [[NSMutableArray alloc] initWithCapacity:10];
+    
+    for (int i = 0; i < 5; i++) {
+        YJNChooseItem *item = [[YJNChooseItem alloc] init];
+        item.title = [NSString stringWithFormat:@"Doctor%d",i];
+        item.ID = [NSString stringWithFormat:@"id%d",i];
+        [self.dataArr addObject:item];
+    }
+    
+    [self.view addSubview:self.chooseList];
+    self.chooseList.frame = self.view.bounds;
+}
+
+-(YJNChooseList *)chooseList {
+    if (!_chooseList) {
+        _chooseList = [[YJNChooseList alloc] init];
+        _chooseList.delegate = self;
+        _chooseList.dataSource = self;
+        _chooseList.maxRowNum = 5;
+        _chooseList.title = @"请选择医生姓名";
+    }
+    return _chooseList;
+}
+-(NSInteger)numberOfRowsInChooseList:(YJNChooseList *)list {
+    return self.dataArr.count;
+}
+
+-(YJNChooseItem *)chooseList:(YJNChooseList *)list itemForRow:(NSInteger)row {
+    YJNChooseItem *item = self.dataArr[row];
+    return item;
+}
+
+-(void)chooseList:(YJNChooseList *)list didSelectedRow:(NSInteger)row {
+    YJNChooseItem *item = self.dataArr[row];
+    NSLog(@"当前选中的是:%@,id=%@",item.title,item.ID);
 }
 
 

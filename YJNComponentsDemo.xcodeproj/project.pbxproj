@@ -13,6 +13,7 @@
 		DC8A780A2007650000E5DF42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC8A78092007650000E5DF42 /* Assets.xcassets */; };
 		DC8A780D2007650000E5DF42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC8A780B2007650000E5DF42 /* LaunchScreen.storyboard */; };
 		DC8A78102007650000E5DF42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8A780F2007650000E5DF42 /* main.m */; };
+		DC8A781A2007662F00E5DF42 /* YJNChooseList.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8A78192007662F00E5DF42 /* YJNChooseList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		DC8A780C2007650000E5DF42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC8A780E2007650000E5DF42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC8A780F2007650000E5DF42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC8A78182007662F00E5DF42 /* YJNChooseList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJNChooseList.h; sourceTree = "<group>"; };
+		DC8A78192007662F00E5DF42 /* YJNChooseList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJNChooseList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		DC8A77FF2007650000E5DF42 /* YJNComponentsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DC8A78162007661500E5DF42 /* Components */,
 				DC8A78002007650000E5DF42 /* AppDelegate.h */,
 				DC8A78012007650000E5DF42 /* AppDelegate.m */,
 				DC8A78032007650000E5DF42 /* ViewController.h */,
@@ -69,6 +73,23 @@
 				DC8A780F2007650000E5DF42 /* main.m */,
 			);
 			path = YJNComponentsDemo;
+			sourceTree = "<group>";
+		};
+		DC8A78162007661500E5DF42 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DC8A78172007662F00E5DF42 /* YJNChooseList */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		DC8A78172007662F00E5DF42 /* YJNChooseList */ = {
+			isa = PBXGroup;
+			children = (
+				DC8A78182007662F00E5DF42 /* YJNChooseList.h */,
+				DC8A78192007662F00E5DF42 /* YJNChooseList.m */,
+			);
+			path = YJNChooseList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC8A781A2007662F00E5DF42 /* YJNChooseList.m in Sources */,
 				DC8A78052007650000E5DF42 /* ViewController.m in Sources */,
 				DC8A78102007650000E5DF42 /* main.m in Sources */,
 				DC8A78022007650000E5DF42 /* AppDelegate.m in Sources */,
