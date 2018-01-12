@@ -33,4 +33,9 @@
 
 @property (nonatomic, copy) NSString *title;
 
+-(void)hideList;
+-(void)listWait;
+-(void)showList;
+-(void)showError:(NSString *)error;
+
 @end

@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.dataArr = [[NSMutableArray alloc] initWithCapacity:10];
     
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 6; i++) {
         YJNChooseItem *item = [[YJNChooseItem alloc] init];
         item.title = [NSString stringWithFormat:@"Doctor%d",i];
         item.ID = [NSString stringWithFormat:@"id%d",i];
@@ -30,6 +30,12 @@
     
     [self.view addSubview:self.chooseList];
     self.chooseList.frame = self.view.bounds;
+    
+    [self.chooseList listWait];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.chooseList showList];
+    });
 }
 
 -(YJNChooseList *)chooseList {
