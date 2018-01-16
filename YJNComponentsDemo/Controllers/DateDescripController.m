@@ -7,8 +7,12 @@
 //
 
 #import "DateDescripController.h"
+#import "NSDate+YJNDateDescription.h"
 
 @interface DateDescripController ()
+@property (weak, nonatomic) IBOutlet UITextField *inputTextField;
+@property (weak, nonatomic) IBOutlet UIButton *okBtn;
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
 
 @end
 
@@ -17,6 +21,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)describeDate:(UIButton *)sender {
+    if (_inputTextField.text) {
+        NSNumber *number = [NSNumber numberWithInteger:[_inputTextField.text integerValue]];
+        if (number) {
+            NSTimeInterval timeInterval = number.doubleValue;
+            _descLabel.text = [NSDate describeMessageTimeInterval:timeInterval];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
