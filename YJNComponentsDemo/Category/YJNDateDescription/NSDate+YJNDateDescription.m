@@ -21,7 +21,7 @@
     NSDate *yesterday = [[NSDate alloc] initWithTimeIntervalSinceNow:-secondsPerDay];
     NSDate *weekAgo = [[NSDate alloc] initWithTimeIntervalSinceNow:-secondsPerDay*7];
     NSCalendar* calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekOfMonth;
+    unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekOfMonth | NSCalendarUnitWeekday;
     NSDateComponents* preCompo       = [calendar components:unitFlags fromDate:messageDate];
     NSDateComponents* yesterDayCompo = [calendar components:unitFlags fromDate:yesterday];
     NSDateComponents* todayCompo     = [calendar components:unitFlags fromDate:today];
@@ -33,7 +33,8 @@
         dateDes = [NSString stringWithFormat:@"昨天 %@",minDes];
     }
     else if (preCompo.year == weekCompo.year && preCompo.month == weekCompo.month && preCompo.weekOfMonth == weekCompo.weekOfMonth) {//同周(这周内)
-        switch ([preCompo weekday]) {
+        NSInteger weekDay = [preCompo weekday];
+        switch (weekDay) {
             case 1:dateDes = [NSString stringWithFormat:@"星期日 %@",minDes] ;break;
             case 2:dateDes = [NSString stringWithFormat:@"星期一 %@",minDes] ;break;
             case 3:dateDes = [NSString stringWithFormat:@"星期二 %@",minDes] ;break;
