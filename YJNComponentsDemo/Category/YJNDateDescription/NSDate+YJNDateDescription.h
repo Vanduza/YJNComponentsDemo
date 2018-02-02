@@ -25,4 +25,5 @@
  @return 日期描述
  */
 +(NSString *)describeMessageTimeInterval:(NSTimeInterval)timeInterval;
+
 @end

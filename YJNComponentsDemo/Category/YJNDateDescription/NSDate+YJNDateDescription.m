@@ -10,31 +10,32 @@
 
 @implementation NSDate (YJNDateDescription)
 +(NSString *)describeMessageDate:(NSDate *)messageDate {
-    NSString * dateDes  = @"未知";
-    
+    NSString *dateDes = [self compareDateByInterval:[messageDate timeIntervalSince1970]];
+    return dateDes;
+}
+
++ (NSString *)compareDateByInterval:(NSTimeInterval)interval {
+    NSString *dateDes = @"未知";
     NSDateFormatter *formater = [[NSDateFormatter alloc] init];
     formater.dateFormat = @"HH:mm";
-    NSString *minDes = [formater stringFromDate:messageDate];
+    NSDate *preDate = [NSDate dateWithTimeIntervalSince1970:interval];
+    NSString *minDes = [formater stringFromDate:preDate];
     
-    NSTimeInterval secondsPerDay = 24 * 60 * 60;
-    NSDate *today = [NSDate date];
-    NSDate *yesterday = [[NSDate alloc] initWithTimeIntervalSinceNow:-secondsPerDay];
-    NSDate *weekAgo = [[NSDate alloc] initWithTimeIntervalSinceNow:-secondsPerDay*7];
-    NSCalendar* calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekOfMonth | NSCalendarUnitWeekday;
-    NSDateComponents* preCompo       = [calendar components:unitFlags fromDate:messageDate];
-    NSDateComponents* yesterDayCompo = [calendar components:unitFlags fromDate:yesterday];
-    NSDateComponents* todayCompo     = [calendar components:unitFlags fromDate:today];
-    NSDateComponents* weekCompo      = [calendar components:unitFlags fromDate:weekAgo];
-    if (preCompo.year == todayCompo.year && preCompo.month == todayCompo.month && preCompo.day == todayCompo.day) {//同日(今天)
+    NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
+    NSTimeInterval todayZero = [self getMidnightOfTheTimeInterval:now];
+    int timeOffset = todayZero - interval;
+    int secondsPerDay = 24 *60 *60;
+
+    if (timeOffset <= 0 * secondsPerDay) {//今天
         dateDes = minDes;
-    }
-    else if ( preCompo.year == yesterDayCompo.year && preCompo.month == yesterDayCompo.month && preCompo.day == yesterDayCompo.day) {//同日(昨天)
+    }else if (timeOffset <= 1 *secondsPerDay) {//昨天
         dateDes = [NSString stringWithFormat:@"昨天 %@",minDes];
     }
-    else if (preCompo.year == weekCompo.year && preCompo.month == weekCompo.month && preCompo.weekOfMonth == weekCompo.weekOfMonth) {//同周(这周内)
-        NSInteger weekDay = [preCompo weekday];
-        switch (weekDay) {
+    else if (timeOffset <= 7 * secondsPerDay) {//一周内
+        NSCalendar* calendar = [NSCalendar currentCalendar];
+        unsigned unitFlags = NSCalendarUnitWeekday;
+        NSDateComponents* preCompo = [calendar components:unitFlags fromDate:preDate];
+        switch ([preCompo weekday]) {
             case 1:dateDes = [NSString stringWithFormat:@"星期日 %@",minDes] ;break;
             case 2:dateDes = [NSString stringWithFormat:@"星期一 %@",minDes] ;break;
             case 3:dateDes = [NSString stringWithFormat:@"星期二 %@",minDes] ;break;
@@ -44,23 +45,36 @@
             case 7:dateDes = [NSString stringWithFormat:@"星期六 %@",minDes] ;break;
             default:break;
         }
-    }else if (preCompo.year == todayCompo.year) {//同年(今年内)
-        formater.dateFormat = @"MM/dd HH:mm";
-        dateDes = [NSString stringWithFormat:@"%@",[formater stringFromDate:messageDate]];
-    }else {//不同年
-        formater.dateFormat = @"yyyy/MM/dd HH:mm";
-        dateDes = [formater stringFromDate:messageDate];
+    }else {
+        NSCalendar* calendar = [NSCalendar currentCalendar];
+        unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitWeekday;
+        NSDateComponents *preCompo = [calendar components:unitFlags fromDate:preDate];
+        NSDateComponents *todayCompo = [calendar components:unitFlags fromDate:[NSDate date]];
+        if (preCompo.year == todayCompo.year) {//一年内
+            formater.dateFormat = @"MM/dd HH:mm";
+            dateDes = [NSString stringWithFormat:@"%@",[formater stringFromDate:preDate]];
+        }else {//其他
+            formater.dateFormat = @"yyyy/MM/dd HH:mm";
+            dateDes = [formater stringFromDate:preDate];
+        }
     }
     return dateDes;
 }
 
 +(NSString *)describeMessageTimeInterval:(NSTimeInterval)timeInterval {
-    NSDate *dateInSecond = nil;
     //如果是毫秒级的时间戳，转换到秒
     if(timeInterval > 140000000000) {
         timeInterval = timeInterval / 1000;
     }
-    dateInSecond = [NSDate dateWithTimeIntervalSince1970:timeInterval];
-    return [self describeMessageDate:dateInSecond];
+    return [self compareDateByInterval:timeInterval];
+}
+
++(NSTimeInterval)getMidnightOfTheTimeInterval:(NSTimeInterval)timeInterval {
+    NSDate *originalDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    NSDateFormatter *dateFomater = [[NSDateFormatter alloc]init];
+    dateFomater.dateFormat = @"yyyy-MM-dd";
+    NSString *original = [dateFomater stringFromDate:originalDate];
+    NSDate *midnightDate = [dateFomater dateFromString:original];
+    return [midnightDate timeIntervalSince1970];
 }
 @end
