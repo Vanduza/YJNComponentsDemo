@@ -71,10 +71,10 @@
 
 +(NSTimeInterval)getMidnightOfTheTimeInterval:(NSTimeInterval)timeInterval {
     NSDate *originalDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
-    NSDateFormatter *dateFomater = [[NSDateFormatter alloc]init];
-    dateFomater.dateFormat = @"yyyy-MM-dd";
-    NSString *original = [dateFomater stringFromDate:originalDate];
-    NSDate *midnightDate = [dateFomater dateFromString:original];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
+    dateFormat.dateFormat = @"yyyy-MM-dd";
+    NSString *original = [dateFormat stringFromDate:originalDate];
+    NSDate *midnightDate = [dateFormat dateFromString:original];
     return [midnightDate timeIntervalSince1970];
 }
 @end
