@@ -13,7 +13,9 @@
 @property (nonatomic, strong) YJNMultiTabView *tabView;
 @end
 
-@implementation MultiTabViewController
+@implementation MultiTabViewController {
+    NSUInteger _currentIndex;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,6 +31,22 @@
     }
     _tabView.tabTitles = titles;
     [self.view addSubview:_tabView];
+    
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 120, 80, 50)];
+    btn.backgroundColor = [UIColor blueColor];
+    [btn setTitle:@"tab" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(p_tab:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+}
+
+-(void)p_tab:(UIButton *)sender {
+    if (_currentIndex==self.tabView.tabTitles.count) {
+        _currentIndex--;
+    }else {
+        _currentIndex ++;
+    }
+    
+    self.tabView.selectedTabIndex = _currentIndex;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,6 +56,7 @@
 
 -(void)yjn_multiTabView:(YJNMultiTabView *)multiTab didSelectedTitle:(YJNMultiTabButton *)titleView atIndex:(NSUInteger)index {
     NSLog(@"当前选中的是:%li",index);
+    _currentIndex = index;
 }
 
 @end

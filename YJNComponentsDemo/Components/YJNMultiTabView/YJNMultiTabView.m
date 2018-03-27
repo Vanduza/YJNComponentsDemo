@@ -45,7 +45,7 @@
     _defaultTitleFont = [UIFont systemFontOfSize:15.0f];
     _defaultSpacing = 15.0f;
     _defaultIndicatorHeight = 3;
-    _defaultIndicatorWidth = 25;
+    _defaultIndicatorWidth = 36;
     
     _isFirstLoad = YES;
     [self addSubview:self.scrollView];
@@ -58,7 +58,7 @@
     CGFloat lineHeight = 1/[UIScreen mainScreen].scale;
     CGFloat screen_width = [UIScreen mainScreen].bounds.size.width;
     self.underline.frame = CGRectMake(0, self.bounds.size.height - lineHeight, screen_width, lineHeight);
-//    self.indicator.frame = CGRectMake(0, self.bounds.size.height - _defaultIndicatorHeight, _defaultIndicatorWidth, _defaultIndicatorHeight);
+    self.indicator.frame = CGRectMake(0, self.bounds.size.height - _defaultIndicatorHeight, _defaultIndicatorWidth, _defaultIndicatorHeight);
     
     if(self.selectedTabIndex){
         if (self.delegate && [_delegate respondsToSelector:@selector(yjn_multiTabView:didSelectedTitle:atIndex:)]) {
@@ -73,6 +73,7 @@
 -(void)setTabTitles:(NSArray<NSString *> *)tabTitles {
     _tabTitles = tabTitles;
     [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+
     _tabButtons = [[NSMutableArray alloc] init];
     
     __block CGFloat titleButton_X = _defaultInsets.left;
@@ -93,6 +94,7 @@
 
         _appendContentWidth = self.scrollView.contentSize.width;
     }];
+    
 }
 
 - (void)updateSlideTitleAttributes{
@@ -246,6 +248,12 @@
     return btn;
 }
 
+-(void)updateButtonPosition:(YJNMultiTabButton *)sender {
+    [self setSelectedButtonCenter:sender];
+    [self updateIndicatorViewOffsetCurrentButton:sender];
+    [self updateSeletedButton:sender];
+}
+
 #pragma mark - getter
 - (UIScrollView *)scrollView{
     if(!_scrollView){
@@ -267,7 +275,7 @@
 -(UIView *)indicator {
     if (!_indicator) {
         _indicator = [[UIView alloc] init];
-        _indicator.backgroundColor = [UIColor redColor];
+        _indicator.backgroundColor = _indicatorColor?_indicatorColor:[UIColor redColor];
         [self.scrollView addSubview:_indicator];
     }
     return _indicator;
@@ -276,12 +284,17 @@
 #pragma mark - setter
 -(void)setSelectedTabIndex:(NSInteger)selectedTabIndex {
     _selectedTabIndex = selectedTabIndex;
-    [self updateSlideTitleAttributes];
+    YJNMultiTabButton *btn = [_tabButtons objectAtIndex:selectedTabIndex];
+    if (selectedTabIndex == 0) {
+        [self updateSlideTitleAttributes];
+    }else {
+        [self updateButtonPosition:btn];
+    }
 }
 
 -(void)setNeedIndicator:(BOOL)needIndicator {
     _needIndicator = needIndicator;
-    self.indicator.hidden = _needIndicator;
+    self.indicator.hidden = !_needIndicator;
 }
 
 - (void)setContentInset:(YJNMultiTabViewEdgeInsets)contentInset{
@@ -292,6 +305,11 @@
 -(void)setIndicatorViewStyle:(YJNMultiTabIndicatorStyle)indicatorViewStyle {
     _indicatorViewStyle = indicatorViewStyle;
     [self updateSlideTitleAttributes];
+}
+
+-(void)setIndicatorColor:(UIColor *)indicatorColor {
+    _indicatorColor = indicatorColor;
+    _indicator.backgroundColor = _indicatorColor;
 }
 
 @end
