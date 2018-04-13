@@ -30,6 +30,7 @@
 		DCA19B6D2010745B00B3904F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCA19B622010745B00B3904F /* Info.plist */; };
 		DCA19B7C2010981C00B3904F /* NSDate+YJNDateDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA19B772010981C00B3904F /* NSDate+YJNDateDescription.m */; };
 		DCA19B7D2010981C00B3904F /* UIViewController+YJNHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA19B7A2010981C00B3904F /* UIViewController+YJNHUD.m */; };
+		DCB1326520809E9600CD7DC3 /* UIButton+YJNCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB1326420809E9600CD7DC3 /* UIButton+YJNCountDown.m */; };
 		DCEA3FF520455002007E0733 /* YJNMultiTabButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEA3FF220455002007E0733 /* YJNMultiTabButton.m */; };
 		DCEA3FF620455002007E0733 /* YJNMultiTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEA3FF320455002007E0733 /* YJNMultiTabView.m */; };
 		DCEA3FF9204550F2007E0733 /* MultiTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEA3FF8204550F2007E0733 /* MultiTabViewController.m */; };
@@ -84,6 +85,8 @@
 		DCA19B782010981C00B3904F /* NSDate+YJNDateDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YJNDateDescription.h"; sourceTree = "<group>"; };
 		DCA19B7A2010981C00B3904F /* UIViewController+YJNHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YJNHUD.m"; sourceTree = "<group>"; };
 		DCA19B7B2010981C00B3904F /* UIViewController+YJNHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YJNHUD.h"; sourceTree = "<group>"; };
+		DCB1326320809E9600CD7DC3 /* UIButton+YJNCountDown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+YJNCountDown.h"; sourceTree = "<group>"; };
+		DCB1326420809E9600CD7DC3 /* UIButton+YJNCountDown.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+YJNCountDown.m"; sourceTree = "<group>"; };
 		DCEA3FF020455002007E0733 /* YJNMultiTabButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJNMultiTabButton.h; sourceTree = "<group>"; };
 		DCEA3FF120455002007E0733 /* YJNMultiTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJNMultiTabView.h; sourceTree = "<group>"; };
 		DCEA3FF220455002007E0733 /* YJNMultiTabButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJNMultiTabButton.m; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 		DC0EC0F9200DD52200E601CC /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				DCB1326220809E5F00CD7DC3 /* YJNCountDownBtn */,
 				DCA19B7E20109C5E00B3904F /* YJNPopoverArrowMenu */,
 				DCA19B762010981C00B3904F /* YJNDateDescription */,
 				DCA19B792010981C00B3904F /* YJNHud */,
@@ -265,6 +269,15 @@
 			path = YJNPopoverArrowMenu;
 			sourceTree = "<group>";
 		};
+		DCB1326220809E5F00CD7DC3 /* YJNCountDownBtn */ = {
+			isa = PBXGroup;
+			children = (
+				DCB1326320809E9600CD7DC3 /* UIButton+YJNCountDown.h */,
+				DCB1326420809E9600CD7DC3 /* UIButton+YJNCountDown.m */,
+			);
+			path = YJNCountDownBtn;
+			sourceTree = "<group>";
+		};
 		DCEA3FEF20455002007E0733 /* YJNMultiTabView */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +367,7 @@
 				DCA19B6A2010745B00B3904F /* MASConstraint.m in Sources */,
 				DCA19B6B2010745B00B3904F /* MASViewConstraint.m in Sources */,
 				DCA19B642010745B00B3904F /* ViewController+MASAdditions.m in Sources */,
+				DCB1326520809E9600CD7DC3 /* UIButton+YJNCountDown.m in Sources */,
 				DCA19B6C2010745B00B3904F /* MASViewAttribute.m in Sources */,
 				DC20C9F120088C3F00131174 /* YJNChooseListCover.m in Sources */,
 				DCA19B7C2010981C00B3904F /* NSDate+YJNDateDescription.m in Sources */,
