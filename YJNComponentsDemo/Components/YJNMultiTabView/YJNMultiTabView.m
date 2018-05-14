@@ -312,4 +312,20 @@
     _indicator.backgroundColor = _indicatorColor;
 }
 
+-(void)setNeedUnderline:(BOOL)needUnderline {
+    _needUnderline = needUnderline;
+    self.underline.hidden = !needUnderline;
+}
+
+-(void)setIndicatorWidth:(CGFloat)indicatorWidth {
+    _indicatorWidth = indicatorWidth;
+    _defaultIndicatorWidth = indicatorWidth;
+}
+
+-(void)setIndicatorHeight:(CGFloat)indicatorHeight {
+    _indicatorHeight = indicatorHeight;
+    _defaultIndicatorHeight = indicatorHeight;
+}
+
+
 @end

@@ -295,10 +295,10 @@
 			isa = PBXGroup;
 			children = (
 				DCEA3FF020455002007E0733 /* YJNMultiTabButton.h */,
-				DCEA3FF120455002007E0733 /* YJNMultiTabView.h */,
 				DCEA3FF220455002007E0733 /* YJNMultiTabButton.m */,
-				DCEA3FF320455002007E0733 /* YJNMultiTabView.m */,
 				DCEA3FF420455002007E0733 /* YJNMultiTabConstant.h */,
+				DCEA3FF120455002007E0733 /* YJNMultiTabView.h */,
+				DCEA3FF320455002007E0733 /* YJNMultiTabView.m */,
 			);
 			path = YJNMultiTabView;
 			sourceTree = "<group>";

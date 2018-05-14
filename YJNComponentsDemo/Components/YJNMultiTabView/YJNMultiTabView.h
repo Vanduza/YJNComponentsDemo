@@ -30,6 +30,10 @@
 @property (nonatomic, strong) UIColor *indicatorColor;
 /** 指示器风格 */
 @property (nonatomic, assign) YJNMultiTabIndicatorStyle indicatorViewStyle;
+/** 指定指示器宽度 */
+@property (nonatomic, assign) CGFloat indicatorWidth;
+/** 指定指示器高度 */
+@property (nonatomic, assign) CGFloat indicatorHeight;
 /** 设置标题左右偏移量(整体左右) 注意:此属性只有在内容大于屏幕的时候生效 */
 @property (nonatomic, assign) YJNMultiTabViewEdgeInsets contentInset;
 /** 中间间距(默认15) 注意:此属性只有在内容大于屏幕的时候生效 */

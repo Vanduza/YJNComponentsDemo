@@ -23,6 +23,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
     _tabView = [[YJNMultiTabView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 44)];
     _tabView.delegate = self;
+    _tabView.needUnderline = NO;
+    _tabView.indicatorHeight = 5;
+    _tabView.indicatorWidth = 60;
     _tabView.backgroundColor = [UIColor cyanColor];
     NSMutableArray *titles = [[NSMutableArray alloc] initWithCapacity:5];
     for (int i=0; i < 13; i++) {
