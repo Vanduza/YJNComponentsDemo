@@ -12,6 +12,7 @@
 		DC0EC10B200DE39000E601CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0EC109200DE39000E601CC /* ViewController.m */; };
 		DC20C9F120088C3F00131174 /* YJNChooseListCover.m in Sources */ = {isa = PBXBuildFile; fileRef = DC20C9F020088C3F00131174 /* YJNChooseListCover.m */; };
 		DC55A2E1208DB8890006E131 /* UIViewController+Permission.m in Sources */ = {isa = PBXBuildFile; fileRef = DC55A2DF208DB8890006E131 /* UIViewController+Permission.m */; };
+		DC64350F20AA98ED0057AC67 /* YJNDateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC64350E20AA98ED0057AC67 /* YJNDateManager.m */; };
 		DC8A78022007650000E5DF42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8A78012007650000E5DF42 /* AppDelegate.m */; };
 		DC8A78082007650000E5DF42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC8A78062007650000E5DF42 /* Main.storyboard */; };
 		DC8A780A2007650000E5DF42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC8A78092007650000E5DF42 /* Assets.xcassets */; };
@@ -48,6 +49,8 @@
 		DC20C9F020088C3F00131174 /* YJNChooseListCover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJNChooseListCover.m; sourceTree = "<group>"; };
 		DC55A2DF208DB8890006E131 /* UIViewController+Permission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Permission.m"; sourceTree = "<group>"; };
 		DC55A2E0208DB8890006E131 /* UIViewController+Permission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Permission.h"; sourceTree = "<group>"; };
+		DC64350D20AA98ED0057AC67 /* YJNDateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJNDateManager.h; sourceTree = "<group>"; };
+		DC64350E20AA98ED0057AC67 /* YJNDateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJNDateManager.m; sourceTree = "<group>"; };
 		DC8A77FD2007650000E5DF42 /* YJNComponentsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YJNComponentsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC8A78002007650000E5DF42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DC8A78012007650000E5DF42 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -162,6 +165,15 @@
 			path = YJNPermissionManager;
 			sourceTree = "<group>";
 		};
+		DC64350C20AA95650057AC67 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				DC64350D20AA98ED0057AC67 /* YJNDateManager.h */,
+				DC64350E20AA98ED0057AC67 /* YJNDateManager.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		DC8A77F42007650000E5DF42 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +193,7 @@
 		DC8A77FF2007650000E5DF42 /* YJNComponentsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DC64350C20AA95650057AC67 /* Tools */,
 				DC0EC105200DE34800E601CC /* Controllers */,
 				DC0EC100200DDE9C00E601CC /* Vendor */,
 				DC0EC0F9200DD52200E601CC /* Category */,
@@ -376,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCA19B632010745B00B3904F /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				DC64350F20AA98ED0057AC67 /* YJNDateManager.m in Sources */,
 				DC0EC10B200DE39000E601CC /* ViewController.m in Sources */,
 				DCA19B6A2010745B00B3904F /* MASConstraint.m in Sources */,
 				DCA19B6B2010745B00B3904F /* MASViewConstraint.m in Sources */,
@@ -535,10 +549,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N6P8WZG8ZC;
 				INFOPLIST_FILE = YJNComponentsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vanduza.YJNComponentsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -549,10 +564,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N6P8WZG8ZC;
 				INFOPLIST_FILE = YJNComponentsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vanduza.YJNComponentsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
