@@ -11,6 +11,7 @@
 		DC0EC108200DE37800E601CC /* DateDescripController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0EC107200DE37800E601CC /* DateDescripController.m */; };
 		DC0EC10B200DE39000E601CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0EC109200DE39000E601CC /* ViewController.m */; };
 		DC20C9F120088C3F00131174 /* YJNChooseListCover.m in Sources */ = {isa = PBXBuildFile; fileRef = DC20C9F020088C3F00131174 /* YJNChooseListCover.m */; };
+		DC23E78920AC1E4300FFED7D /* YJNDesignableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DC23E78820AC1E4300FFED7D /* YJNDesignableButton.m */; };
 		DC55A2E1208DB8890006E131 /* UIViewController+Permission.m in Sources */ = {isa = PBXBuildFile; fileRef = DC55A2DF208DB8890006E131 /* UIViewController+Permission.m */; };
 		DC64350F20AA98ED0057AC67 /* YJNDateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC64350E20AA98ED0057AC67 /* YJNDateManager.m */; };
 		DC8A78022007650000E5DF42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8A78012007650000E5DF42 /* AppDelegate.m */; };
@@ -47,6 +48,8 @@
 		DC0EC10A200DE39000E601CC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		DC20C9EF20088C3F00131174 /* YJNChooseListCover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJNChooseListCover.h; sourceTree = "<group>"; };
 		DC20C9F020088C3F00131174 /* YJNChooseListCover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJNChooseListCover.m; sourceTree = "<group>"; };
+		DC23E78720AC1E4300FFED7D /* YJNDesignableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJNDesignableButton.h; sourceTree = "<group>"; };
+		DC23E78820AC1E4300FFED7D /* YJNDesignableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJNDesignableButton.m; sourceTree = "<group>"; };
 		DC55A2DF208DB8890006E131 /* UIViewController+Permission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Permission.m"; sourceTree = "<group>"; };
 		DC55A2E0208DB8890006E131 /* UIViewController+Permission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Permission.h"; sourceTree = "<group>"; };
 		DC64350D20AA98ED0057AC67 /* YJNDateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJNDateManager.h; sourceTree = "<group>"; };
@@ -156,6 +159,15 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		DC23E78620AC1E4300FFED7D /* YJNDesignableButton */ = {
+			isa = PBXGroup;
+			children = (
+				DC23E78720AC1E4300FFED7D /* YJNDesignableButton.h */,
+				DC23E78820AC1E4300FFED7D /* YJNDesignableButton.m */,
+			);
+			path = YJNDesignableButton;
+			sourceTree = "<group>";
+		};
 		DC55A2DE208DB8890006E131 /* YJNPermissionManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +224,7 @@
 		DC8A78162007661500E5DF42 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DC23E78620AC1E4300FFED7D /* YJNDesignableButton */,
 				DCEA3FEF20455002007E0733 /* YJNMultiTabView */,
 				DCA19B7F20109CB600B3904F /* YJNPopoverArrowMenu */,
 				DC8A78172007662F00E5DF42 /* YJNChooseList */,
@@ -389,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCA19B632010745B00B3904F /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				DC23E78920AC1E4300FFED7D /* YJNDesignableButton.m in Sources */,
 				DC64350F20AA98ED0057AC67 /* YJNDateManager.m in Sources */,
 				DC0EC10B200DE39000E601CC /* ViewController.m in Sources */,
 				DCA19B6A2010745B00B3904F /* MASConstraint.m in Sources */,
