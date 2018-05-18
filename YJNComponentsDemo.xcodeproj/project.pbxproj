@@ -33,6 +33,7 @@
 		DCA19B6D2010745B00B3904F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCA19B622010745B00B3904F /* Info.plist */; };
 		DCA19B7C2010981C00B3904F /* NSDate+YJNDateDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA19B772010981C00B3904F /* NSDate+YJNDateDescription.m */; };
 		DCA19B7D2010981C00B3904F /* UIViewController+YJNHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA19B7A2010981C00B3904F /* UIViewController+YJNHUD.m */; };
+		DCA28E6B20AF8854002FD6AF /* UINavigationController+Inspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA28E6920AF8854002FD6AF /* UINavigationController+Inspectable.m */; };
 		DCB1326520809E9600CD7DC3 /* UIButton+YJNCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB1326420809E9600CD7DC3 /* UIButton+YJNCountDown.m */; };
 		DCEA3FF520455002007E0733 /* YJNMultiTabButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEA3FF220455002007E0733 /* YJNMultiTabButton.m */; };
 		DCEA3FF620455002007E0733 /* YJNMultiTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEA3FF320455002007E0733 /* YJNMultiTabView.m */; };
@@ -94,6 +95,8 @@
 		DCA19B782010981C00B3904F /* NSDate+YJNDateDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YJNDateDescription.h"; sourceTree = "<group>"; };
 		DCA19B7A2010981C00B3904F /* UIViewController+YJNHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YJNHUD.m"; sourceTree = "<group>"; };
 		DCA19B7B2010981C00B3904F /* UIViewController+YJNHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YJNHUD.h"; sourceTree = "<group>"; };
+		DCA28E6920AF8854002FD6AF /* UINavigationController+Inspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Inspectable.m"; sourceTree = "<group>"; };
+		DCA28E6A20AF8854002FD6AF /* UINavigationController+Inspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Inspectable.h"; sourceTree = "<group>"; };
 		DCB1326320809E9600CD7DC3 /* UIButton+YJNCountDown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+YJNCountDown.h"; sourceTree = "<group>"; };
 		DCB1326420809E9600CD7DC3 /* UIButton+YJNCountDown.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+YJNCountDown.m"; sourceTree = "<group>"; };
 		DCEA3FF020455002007E0733 /* YJNMultiTabButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJNMultiTabButton.h; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 		DC0EC0F9200DD52200E601CC /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				DCA28E6820AF8854002FD6AF /* YJNNavigationControllerInspectable */,
 				DC55A2DE208DB8890006E131 /* YJNPermissionManager */,
 				DCB1326220809E5F00CD7DC3 /* YJNCountDownBtn */,
 				DCA19B7E20109C5E00B3904F /* YJNPopoverArrowMenu */,
@@ -308,6 +312,15 @@
 			path = YJNPopoverArrowMenu;
 			sourceTree = "<group>";
 		};
+		DCA28E6820AF8854002FD6AF /* YJNNavigationControllerInspectable */ = {
+			isa = PBXGroup;
+			children = (
+				DCA28E6920AF8854002FD6AF /* UINavigationController+Inspectable.m */,
+				DCA28E6A20AF8854002FD6AF /* UINavigationController+Inspectable.h */,
+			);
+			path = YJNNavigationControllerInspectable;
+			sourceTree = "<group>";
+		};
 		DCB1326220809E5F00CD7DC3 /* YJNCountDownBtn */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +417,7 @@
 				DCA19B632010745B00B3904F /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				DC23E78920AC1E4300FFED7D /* YJNDesignableButton.m in Sources */,
 				DC64350F20AA98ED0057AC67 /* YJNDateManager.m in Sources */,
+				DCA28E6B20AF8854002FD6AF /* UINavigationController+Inspectable.m in Sources */,
 				DC0EC10B200DE39000E601CC /* ViewController.m in Sources */,
 				DCA19B6A2010745B00B3904F /* MASConstraint.m in Sources */,
 				DCA19B6B2010745B00B3904F /* MASViewConstraint.m in Sources */,
