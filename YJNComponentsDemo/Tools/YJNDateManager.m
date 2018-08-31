@@ -46,4 +46,13 @@
     NSString *lastString = [myDateFormatter stringFromDate: lastDate];
     return lastString;
 }
+
++(NSInteger)yjn_getTodayZero {
+    NSDate *today = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyyMMdd";
+    NSString *tmp = [formatter stringFromDate:today];
+    NSDate *date = [formatter dateFromString:tmp];
+    NSInteger todayZero = [date timeIntervalSince1970];
+}
 @end

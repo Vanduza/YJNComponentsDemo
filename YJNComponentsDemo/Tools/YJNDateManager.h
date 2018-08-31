@@ -25,4 +25,11 @@
  @return 最后一天 格式:@"yyyyMMdd"
  */
 + (NSString *)yjn_getLastDayWithMonth:(NSString *)monthStr;
+
+/**
+ 获取今天零点的时间戳
+
+ @return 零点的时间戳
+ */
++(NSInteger)yjn_getTodayZero;
 @end
