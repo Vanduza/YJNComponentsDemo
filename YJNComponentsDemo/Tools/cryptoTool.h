@@ -1,6 +1,5 @@
 //
 //  cryptoTool.h
-//  yiyideyi
 //
 //  Created by jianchengpan on 16/9/1.
 //
